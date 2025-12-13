@@ -1,4 +1,5 @@
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,14 +29,14 @@ const Header = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48 bg-popover">
-            <DropdownMenuItem className="cursor-pointer">
-              Formulário
+            <DropdownMenuItem asChild className="cursor-pointer">
+              <Link to="/">Formulário</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Base
+            <DropdownMenuItem asChild className="cursor-pointer">
+              <Link to="/base">Base</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Cotas Recebidas por Geres
+            <DropdownMenuItem asChild className="cursor-pointer">
+              <Link to="/cotas-recebidas-por-geres">Cotas Recebidas por Geres</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
