@@ -14,7 +14,7 @@ const Header = () => {
         {/* Logo and Name */}
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">F</span>
+            <span className="text-lg font-bold text-primary-foreground">Logo</span>
           </div>
           <span className="text-lg font-semibold text-foreground">SES - DISTRIBUIÇÃO E REMANEJAMENTO DE COTAS</span>
         </div>
@@ -29,13 +29,13 @@ const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48 bg-popover">
             <DropdownMenuItem className="cursor-pointer">
-              Dashboard
+              Formulário
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
-              Settings
+              Base
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
-              Help & Support
+              Cotas Recebidas por Geres
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
