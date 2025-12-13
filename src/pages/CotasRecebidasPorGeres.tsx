@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "@/components/Header";
 import {
   Table,
@@ -8,71 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
 
 const columns = Array.from({ length: 15 }, (_, i) => `Coluna ${i + 1}`);
-const integerColumns = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 const CotasRecebidasPorGeres = () => {
-  const [textValues, setTextValues] = useState<Record<number, string>>({});
-  const [integerValues, setIntegerValues] = useState<Record<number, string>>({});
-
-  const handleTextChange = (col: number, value: string) => {
-    setTextValues(prev => ({ ...prev, [col]: value }));
-  };
-
-  const handleIntegerChange = (col: number, value: string) => {
-    const numericValue = value.replace(/\D/g, "");
-    setIntegerValues(prev => ({ ...prev, [col]: numericValue }));
-  };
-
-  const calculateSum = () => {
-    return integerColumns.reduce((sum, col) => {
-      const value = parseInt(integerValues[col] || "0", 10);
-      return sum + (isNaN(value) ? 0 : value);
-    }, 0);
-  };
-
-  const renderCell = (colIndex: number) => {
-    const colNumber = colIndex + 1;
-
-    // Colunas 1-2: Texto
-    if (colNumber <= 2) {
-      return (
-        <Input
-          type="text"
-          value={textValues[colNumber] || ""}
-          onChange={(e) => handleTextChange(colNumber, e.target.value)}
-          placeholder="Texto"
-          className="w-[120px]"
-        />
-      );
-    }
-
-    // Colunas 3-14: Inteiros
-    if (integerColumns.includes(colNumber)) {
-      return (
-        <Input
-          type="text"
-          inputMode="numeric"
-          value={integerValues[colNumber] || ""}
-          onChange={(e) => handleIntegerChange(colNumber, e.target.value)}
-          placeholder="0"
-          className="w-[80px]"
-        />
-      );
-    }
-
-    // Coluna 15: Soma
-    if (colNumber === 15) {
-      return (
-        <span className="font-bold">{calculateSum()}</span>
-      );
-    }
-
-    return "—";
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -106,7 +44,7 @@ const CotasRecebidasPorGeres = () => {
                       key={index} 
                       className={`whitespace-nowrap ${isGray ? 'bg-gray-100' : 'bg-blue-100'}`}
                     >
-                      {renderCell(index)}
+                      —
                     </TableCell>
                   );
                 })}
