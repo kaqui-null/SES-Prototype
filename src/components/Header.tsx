@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
             <span className="text-lg font-bold text-primary-foreground">F</span>
           </div>
-          <span className="text-xl font-semibold text-foreground">FormApp</span>
+          <span className="text-lg font-semibold text-foreground">SES - DISTRIBUIÇÃO E REMANEJAMENTO DE COTAS</span>
         </div>
 
         {/* Dropdown Menu */}
