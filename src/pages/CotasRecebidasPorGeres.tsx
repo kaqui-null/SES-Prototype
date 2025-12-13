@@ -8,7 +8,24 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const columns = Array.from({ length: 15 }, (_, i) => `Coluna ${i + 1}`);
+// Colunas exatas baseadas na estrutura do relatório CSV
+const COTAS_COLUMNS = [
+  "UNIDADE EXECUTANTE",
+  "ITEM DE AGENDAMENTO",
+  "I Geres",
+  "II Geres",
+  "III Geres",
+  "IV Geres",
+  "V Geres",
+  "VI Geres",
+  "VII Geres",
+  "VIII Geres",
+  "IX Geres",
+  "X Geres",
+  "XI Geres",
+  "XII Geres",
+  "Total Geral"
+];
 
 const CotasRecebidasPorGeres = () => {
   return (
@@ -20,13 +37,14 @@ const CotasRecebidasPorGeres = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                {columns.map((col, index) => {
-                  const colNumber = index + 1;
-                  const isGray = colNumber === 15;
+                {COTAS_COLUMNS.map((col, index) => {
+                  // Lógica: A última coluna (Total Geral) fica cinza, o resto azul
+                  const isTotal = col === "Total Geral";
+                  
                   return (
                     <TableHead 
                       key={index} 
-                      className={`whitespace-nowrap ${isGray ? 'bg-gray-500 text-white' : 'bg-blue-500 text-white'}`}
+                      className={`whitespace-nowrap px-4 py-2 ${isTotal ? 'bg-gray-500 text-white font-bold' : 'bg-blue-500 text-white'}`}
                     >
                       {col}
                     </TableHead>
@@ -36,13 +54,12 @@ const CotasRecebidasPorGeres = () => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                {columns.map((_, index) => {
-                  const colNumber = index + 1;
-                  const isGray = colNumber === 15;
+                {COTAS_COLUMNS.map((col, index) => {
+                  const isTotal = col === "Total Geral";
                   return (
                     <TableCell 
                       key={index} 
-                      className={`whitespace-nowrap ${isGray ? 'bg-gray-100' : 'bg-blue-100'}`}
+                      className={`whitespace-nowrap border-b ${isTotal ? 'bg-gray-100 font-medium' : 'bg-blue-50'}`}
                     >
                       —
                     </TableCell>

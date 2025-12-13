@@ -8,25 +8,51 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const columns = Array.from({ length: 21 }, (_, i) => `Coluna ${i + 1}`);
+// Lista exata extraída do arquivo BASE.csv
+const BASE_COLUMNS = [
+  "ANO",
+  "MÊS",
+  "SEMANA EPIDEMIOLÓGICA",
+  "ESPECIALIDADE",
+  "UNIDADE EXECUTANTE",
+  "ITEM DE AGENDAMENTO",
+  "COTA TOTAL UNIDADE/ITEM",
+  "FILA GERES",
+  "COTA PROGRAMADA (FILA)",
+  "GERES RECEPTORA",
+  "REMANEJAMENTO ENTRADA",
+  "REMANEJAMENTO SAÍDA",
+  "APOIADOR RESPONSÁVEL",
+  "UTILIZADO",
+  "UTILIZADO x SALDO FINAL",
+  "COTA 1° REMANEJMANETO",
+  "*COTA FINAL GERES",
+  "COTA DISPONÍVEL GERES",
+  "TOTAL AGENDADOS",
+  "*% PERDA PRIMÁRIA",
+  "*% AGENDAMENTO POR COTA PROGRAMADA",
+  "*% EXECUÇÃO POR COTA PROGRAMADA",
+  "DATA/HORA"
+];
 
 const Base = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold text-foreground mb-6">Base</h1>
+        <h1 className="text-2xl font-bold text-foreground mb-6">Base de Dados (Cotas)</h1>
         <div className="overflow-x-auto rounded-lg border border-border">
           <Table>
             <TableHeader>
               <TableRow>
-                {columns.map((col, index) => {
-                  const colNumber = index + 1;
-                  const isRed = colNumber >= 15 && colNumber <= 20;
+                {BASE_COLUMNS.map((col, index) => {
+                  // Lógica: Se o nome começar com "*" ou for um KPI crítico, fica vermelho
+                  const isRed = col.startsWith("*") || col.includes("TOTAL AGENDADOS") || col.includes("COTA DISPONÍVEL");
+                  
                   return (
                     <TableHead 
                       key={index} 
-                      className={`whitespace-nowrap ${isRed ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
+                      className={`whitespace-nowrap px-4 py-2 ${isRed ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
                     >
                       {col}
                     </TableHead>
@@ -35,14 +61,14 @@ const Base = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
+              {/* Exemplo de linha vazia para visualizar a estrutura */}
               <TableRow>
-                {columns.map((_, index) => {
-                  const colNumber = index + 1;
-                  const isRed = colNumber >= 15 && colNumber <= 20;
+                {BASE_COLUMNS.map((col, index) => {
+                  const isRed = col.startsWith("*") || col.includes("TOTAL AGENDADOS") || col.includes("COTA DISPONÍVEL");
                   return (
                     <TableCell 
                       key={index} 
-                      className={`whitespace-nowrap ${isRed ? 'bg-red-100' : 'bg-blue-100'}`}
+                      className={`whitespace-nowrap border-b ${isRed ? 'bg-red-50' : 'bg-blue-50'}`}
                     >
                       —
                     </TableCell>
