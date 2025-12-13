@@ -14,9 +14,8 @@ const Header = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo and Name */}
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">Logo</span>
-          </div>
+          {/* Substitua "/logo.png" pelo caminho correto da sua imagem na pasta public ou importada */}
+          <img src="/gov.webp" alt="Logo SES" className="h-9 w-auto object-contain" />
           <span className="text-lg font-semibold text-foreground">SES - DISTRIBUIÇÃO E REMANEJAMENTO DE COTAS</span>
         </div>
 
