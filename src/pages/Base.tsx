@@ -231,20 +231,34 @@ const Base = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                {columns.map((col, index) => (
-                  <TableHead key={index} className="whitespace-nowrap">
-                    {col}
-                  </TableHead>
-                ))}
+                {columns.map((col, index) => {
+                  const colNumber = index + 1;
+                  const isRed = colNumber >= 15 && colNumber <= 20;
+                  return (
+                    <TableHead 
+                      key={index} 
+                      className={`whitespace-nowrap ${isRed ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
+                    >
+                      {col}
+                    </TableHead>
+                  );
+                })}
               </TableRow>
             </TableHeader>
             <TableBody>
               <TableRow>
-                {columns.map((_, index) => (
-                  <TableCell key={index} className="whitespace-nowrap">
-                    {renderCell(index)}
-                  </TableCell>
-                ))}
+                {columns.map((_, index) => {
+                  const colNumber = index + 1;
+                  const isRed = colNumber >= 15 && colNumber <= 20;
+                  return (
+                    <TableCell 
+                      key={index} 
+                      className={`whitespace-nowrap ${isRed ? 'bg-red-100' : 'bg-blue-100'}`}
+                    >
+                      {renderCell(index)}
+                    </TableCell>
+                  );
+                })}
               </TableRow>
             </TableBody>
           </Table>
