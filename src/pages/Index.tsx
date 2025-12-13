@@ -4,22 +4,22 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 
 const sectionOneFields = [
-  { name: "field1", label: "Category", type: "dropdown" as const, placeholder: "Select category" },
-  { name: "field2", label: "Type", type: "dropdown" as const, placeholder: "Select type" },
-  { name: "field3", label: "First Name", type: "text" as const, placeholder: "Enter first name" },
-  { name: "field4", label: "Last Name", type: "text" as const, placeholder: "Enter last name" },
-  { name: "field5", label: "Email Address", type: "text" as const, placeholder: "Enter email" },
-  { name: "field6", label: "Status", type: "dropdown" as const, placeholder: "Select status" },
-  { name: "field7", label: "Notes", type: "text" as const, placeholder: "Enter notes" },
+  { name: "field1", label: "Unidade Executante", type: "dropdown" as const, placeholder: "Selecione unidade" },
+  { name: "field2", label: "Item de Agendamento", type: "dropdown" as const, placeholder: "Selecione item" },
+  { name: "field3", label: "Cota total Unidade/Item", type: "text" as const},
+  { name: "field4", label: "Fila Geres", type: "text" as const},
+  { name: "field5", label: "Cota Programada (Fila)", type: "text" as const},
+  { name: "field6", label: "Geres Receptora", type: "dropdown" as const, placeholder: "Selecione Geres"},
+  { name: "field7", label: "Apoiador Responsável", type: "text" as const},
 ];
 
 const sectionTwoFields = [
-  { name: "field8", label: "Department", type: "dropdown" as const, placeholder: "Select department" },
-  { name: "field9", label: "Role", type: "dropdown" as const, placeholder: "Select role" },
-  { name: "field10", label: "Location", type: "dropdown" as const, placeholder: "Select location" },
-  { name: "field11", label: "Phone Number", type: "text" as const, placeholder: "Enter phone number" },
-  { name: "field12", label: "Address", type: "text" as const, placeholder: "Enter address" },
-  { name: "field13", label: "Additional Info", type: "text" as const, placeholder: "Enter additional info" },
+  { name: "field8", label: "Unidade Executante", type: "dropdown" as const, placeholder: "Selecione unidade" },
+  { name: "field9", label: "Item de Agendamento", type: "dropdown" as const, placeholder: "Selecione item" },
+  { name: "field10", label: "Geres Receptora", type: "dropdown" as const, placeholder: "Selecione Geres" },
+  { name: "field11", label: "Remanejamento Entrada", type: "text" as const},
+  { name: "field12", label: "Remanejamento Saída", type: "text" as const},
+  { name: "field13", label: "Apoiador Responsável", type: "text" as const},
 ];
 
 const Index = () => {
