@@ -47,8 +47,8 @@ const Index = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <FormSection title="Personal Information" fields={sectionOneFields} />
-            <FormSection title="Professional Details" fields={sectionTwoFields} />
+            <FormSection title="Liberação Agenda" fields={sectionOneFields} />
+            <FormSection title="Movimentação Cota" fields={sectionTwoFields} />
 
             <div className="flex justify-end pt-4">
               <Button type="submit" size="lg" className="min-w-32">
