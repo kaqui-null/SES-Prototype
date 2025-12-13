@@ -39,10 +39,10 @@ const Index = () => {
         <div className="mx-auto max-w-4xl">
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-foreground md:text-3xl">
-              Application Form
+              DISTRIBUIÇÃO E REMANEJAMENTO DE COTAS
             </h1>
             <p className="mt-2 text-muted-foreground">
-              Please fill out all the required fields below.
+              Itens Unificados - Gestão de Cotas Nível Central
             </p>
           </div>
 
