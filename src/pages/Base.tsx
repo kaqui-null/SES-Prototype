@@ -49,7 +49,7 @@ const Base = () => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                {/* Column 1: Year only */}
+                {/* Coluna 1: Apenas Ano */}
                 <TableCell className="whitespace-nowrap min-w-[120px]">
                   <Select value={year} onValueChange={setYear}>
                     <SelectTrigger className="w-[100px]">
@@ -65,7 +65,7 @@ const Base = () => {
                   </Select>
                 </TableCell>
 
-                {/* Column 2: Month and Year */}
+                {/* Coluna 2: Mês e Ano */}
                 <TableCell className="whitespace-nowrap min-w-[200px]">
                   <div className="flex gap-2">
                     <Select 
@@ -101,20 +101,21 @@ const Base = () => {
                   </div>
                 </TableCell>
 
-                {/* Columns 3-20: Generic */}
+                {/* Colunas 3-20: Genéricas */}
                 {Array.from({ length: 18 }, (_, index) => (
                   <TableCell key={index + 2} className="whitespace-nowrap">
                     —
                   </TableCell>
                 ))}
 
-                {/* Column 21: Full DateTime */}
+                {/* Coluna 21: Data e Hora Completa */}
                 <TableCell className="whitespace-nowrap min-w-[220px]">
                   <Input
                     type="datetime-local"
                     value={dateTime}
                     onChange={(e) => setDateTime(e.target.value)}
                     className="w-[200px]"
+                    lang="pt-BR"
                   />
                 </TableCell>
               </TableRow>
